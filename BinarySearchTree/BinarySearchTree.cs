@@ -52,9 +52,33 @@ namespace BinarySearchTree
         {
             return this.Root;
         }
+        //UC2
+        //Count Of Element in Binary Search Tree
         public int GetSize()
         {
             return count;
+        }
+        //UC3
+        //Search elements in BST
+        public bool SearchTree(int data, Node<T> node)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (this.Current.data.Equals(data))
+                {
+                    result = true;
+                }
+                else if (this.Current.data.CompareTo(data) > 0)
+                {
+                    this.Current = this.Current.leftNode;
+                    SearchTree(data, Current);
+                }
+                return result;
+            }
         }
         public void Display(Node<T> node)
         {
