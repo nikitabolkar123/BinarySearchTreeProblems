@@ -52,6 +52,10 @@ namespace BinarySearchTree
         {
             return this.Root;
         }
+        public int GetSize()
+        {
+            return count;
+        }
         public void Display(Node<T> node)
         {
             if (node != null)
